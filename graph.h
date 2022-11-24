@@ -3,7 +3,9 @@
 #include <map>
 #include <string>
 #include <vector>
+#include <fstream>
 #include "airport.h"
+#include "utilities.h"
 
 using namespace std;
 
@@ -13,4 +15,5 @@ public:
     void printGraph();
 private:
     map<string, vector<pair<Airport, double>>> adjlist;
+    vector<Airport> airports;
 };
