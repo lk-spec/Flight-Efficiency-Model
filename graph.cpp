@@ -32,10 +32,21 @@ Graph::Graph(string airports_file, string routes_file) {
         }
         std::cout << "\n";
 
-        Airport ap(contents[0], contents[1], contents[4], contents[5], contents[6], contents[7]);
+        if (contents[0] == "N" || contents[1] == "N" || contents[4] == "N" || contents[5] == "N" || contents[6] == "N" || contents[7] == "N") {
+            continue; 
+        }
+
+        double latitude = stod(contents[6]);
+        double longitude = stod(contents[7]);
+        int id = stoi(contents[0]);
+
+        // Airport ap(id, string(contents[1]), string(contents[4]), string(contents[5]), latitude, longitude);
+        Airport ap;
+        airports.push_back(ap);
         
         contents.clear();
     }
+    std::cout << airports.size() << std::endl;
     a_file.close();
 }
 
