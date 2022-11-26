@@ -10,6 +10,7 @@ Graph::Graph(string airports_file, string routes_file) {
     while (std::getline(a_file, line)) {
         vector<string> contents = split_line(line);
 
+        // create helper method to clean contents
         for (unsigned i = 0; i < contents.size(); i++) {
             string str = contents[i];
             // code to remove quotes within string
@@ -21,6 +22,7 @@ Graph::Graph(string airports_file, string routes_file) {
         }
         std::cout << "\n";
 
+        // also create helper method to validate content
         // check if content is valid; 
         if (contents[0] == "N" || contents[1] == "N" || contents[4] == "N" || contents[5] == "N" || contents[6] == "N" || contents[7] == "N") {
             continue; 
