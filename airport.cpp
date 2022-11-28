@@ -15,4 +15,21 @@ Airport::Airport(int id, string name, string iata, string icao, double latitude,
     this->latitude = latitude;
 }
 
-Airport::Airpor
+int Airport::getId() {
+    return id;
+}
+string Airport::getName() {
+    return name;
+}
+string Airport::getIata() {
+    return iata;
+}
+string Airport::getIcao() {
+    return icao;
+}
+double Airport::getLatitude() {
+    return latitude;
+}
+double Airport::getLongitude() {
+    return longitude;
+}
