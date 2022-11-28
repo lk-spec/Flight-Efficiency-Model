@@ -14,3 +14,5 @@ Airport::Airport(int id, string name, string iata, string icao, double latitude,
     this->longitude = longitude;
     this->latitude = latitude;
 }
+
+Airport::Airpor
