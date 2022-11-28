@@ -44,6 +44,9 @@ Graph::Graph(string airports_file, string routes_file) {
         contents.clear();
     }
 
+    // this creates a list of aiport nodes
+    // using that list and the routes file, we need to create a list of valid routes, which we can then use to create the edges of the graoph
+    // for the distance portion of each edge (double) we will have to create a helper function to calculate that distance
     std::cout << airports.size() << std::endl;
     a_file.close();
 }
