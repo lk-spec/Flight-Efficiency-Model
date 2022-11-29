@@ -18,6 +18,7 @@ int main() {
 
 
     Graph g("/workspaces/CS 225/final-project/225-final-project/data/airports.dat", "/workspaces/CS 225/final-project/225-final-project/data/routes.dat");
+    g.printAirports();
     g.printGraph();
     return 0;  
 }
