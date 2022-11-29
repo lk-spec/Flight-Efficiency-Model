@@ -47,14 +47,65 @@ Graph::Graph(string airports_file, string routes_file) {
 
     }
 
+    a_file.close();
+    generateCodesMap();
+
     // this creates a list of aiport nodes
     // using that list and the routes file, we need to create a list of valid routes, which we can then use to create the edges of the graoph
     // for the distance portion of each edge (double) we will have to create a helper function to calculate that distance
-    a_file.close();
+
+    ifstream r_file;
+    r_file.open(routes_file);
+    line = "";
+    while (std::getline(r_file, line)) {
+        vector<string> contents = split_line(line);
+
+        // create helper method to clean contents
+        for (unsigned i = 0; i < contents.size(); i++) {
+            string str = contents[i];
+            // code to remove quotes within string
+            if (str.size() >= 2 && str[0] == '\"') {
+                str.erase(0, 1);
+                str.erase(str.size() - 1, str.size());
+            }
+            contents[i] = str;
+            // if (i == 2 || i == 4) {
+            //     std::cout << str << " ";
+            // }
+        }
+        
+        if (airport_codes.find(contents[2]) == airport_codes.end()) {
+            continue;
+        }
+
+        if (airport_codes.find(contents[4]) == airport_codes.end()) {
+            continue;
+        }
+
+        Airport source = airport_codes[contents[2]];
+        Airport dest = airport_codes[contents[4]];
+        // double distance = calcDistance(source, dest);
+        double d = 0;
+        pair<string, double> edge = make_pair(contents[4], d);
+        adjlist[contents[2]].push_back(edge);
+    }
+
+    r_file.close();
 }
 
 void Graph::printGraph() {
-    std::cout << "This is my graph" << std::endl;
+    // for (auto & key_val : adjlist) {
+    //     cout << key_val.first << " -> ";
+    //     for (unsigned i = 0; i < key_val.second.size(); i++) {
+    //         cout << key_val.second[i].first << " ";
+    //     }
+    //     cout << "\n";
+    // }
+    cout << "ATL" << " -> ";
+    for (unsigned i = 0; i < adjlist["ATL"].size(); i++) {
+        cout << adjlist["ATL"][i].first << " ";
+    }
+    cout << "\n";
 }
 // created branch
 void Graph::printAirports() {
@@ -62,4 +113,10 @@ void Graph::printAirports() {
         std::cout << airports[i].getId() << " " << airports[i].getName() << " " << airports[i].getIata() << " " << airports[i].getIcao() << " " << airports[i].getLatitude() << " " << airports[i].getLongitude() << std::endl; 
     }
     std::cout << airports.size() << std::endl;
+}
+
+void Graph::generateCodesMap() {
+    for (unsigned i = 0; i < airports.size(); i++) {
+        airport_codes[airports[i].getIata()] = airports[i];
+    }
 }
