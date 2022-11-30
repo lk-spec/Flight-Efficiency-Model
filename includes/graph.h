@@ -17,6 +17,7 @@ public:
     void printAirports();
     void generateCodesMap();
     void printOutgoingFlights(string airport);
+    unsigned getAirportsSize();
 private:
     map<string, vector<pair<string, double>>> adjlist;
     map<string, Airport> airport_codes;

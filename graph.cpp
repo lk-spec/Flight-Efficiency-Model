@@ -119,3 +119,7 @@ void Graph::printAirports() {
     }
     std::cout << airports.size() << std::endl;
 }
+
+unsigned Graph::getAirportsSize() {
+    return airports.size();
+}
