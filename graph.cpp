@@ -50,10 +50,6 @@ Graph::Graph(string airports_file, string routes_file) {
     a_file.close();
     generateCodesMap();
 
-    // this creates a list of aiport nodes
-    // using that list and the routes file, we need to create a list of valid routes, which we can then use to create the edges of the graoph
-    // for the distance portion of each edge (double) we will have to create a helper function to calculate that distance
-
     ifstream r_file;
     r_file.open(routes_file);
     line = "";
@@ -94,20 +90,23 @@ Graph::Graph(string airports_file, string routes_file) {
 }
 
 void Graph::printGraph() {
-    // for (auto & key_val : adjlist) {
-    //     cout << key_val.first << " -> ";
-    //     for (unsigned i = 0; i < key_val.second.size(); i++) {
-    //         cout << key_val.second[i].first << " ";
-    //     }
-    //     cout << "\n";
-    // }
-    cout << "ATL" << " -> ";
-    for (unsigned i = 0; i < adjlist["ATL"].size(); i++) {
-        cout << adjlist["ATL"][i].first << " ";
+    for (auto & key_val : adjlist) {
+        cout << key_val.first << " -> ";
+        for (unsigned i = 0; i < key_val.second.size(); i++) {
+            cout << key_val.second[i].first << " ";
+        }
+        cout << "\n";
     }
-    cout << "\n";
 }
-// created branch
+
+void Graph::printOutgoingFlights(string airport) {
+    cout << airport << " -> ";
+    for (unsigned i = 0; i < adjlist[airport].size(); i++) {
+        cout << adjlist[airport][i].first << " ";
+    }
+    cout << adjlist[airport].size();
+}
+
 void Graph::printAirports() {
     for (unsigned i = 0; i < airports.size(); i++) {
         std::cout << airports[i].getId() << " " << airports[i].getName() << " " << airports[i].getIata() << " " << airports[i].getIcao() << " " << airports[i].getLatitude() << " " << airports[i].getLongitude() << std::endl; 
