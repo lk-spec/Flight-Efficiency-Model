@@ -89,6 +89,12 @@ Graph::Graph(string airports_file, string routes_file) {
     r_file.close();
 }
 
+void Graph::generateCodesMap() {
+    for (unsigned i = 0; i < airports.size(); i++) {
+        airport_codes[airports[i].getIata()] = airports[i];
+    }
+}
+
 void Graph::printGraph() {
     for (auto & key_val : adjlist) {
         cout << key_val.first << " -> ";
@@ -112,10 +118,4 @@ void Graph::printAirports() {
         std::cout << airports[i].getId() << " " << airports[i].getName() << " " << airports[i].getIata() << " " << airports[i].getIcao() << " " << airports[i].getLatitude() << " " << airports[i].getLongitude() << std::endl; 
     }
     std::cout << airports.size() << std::endl;
-}
-
-void Graph::generateCodesMap() {
-    for (unsigned i = 0; i < airports.size(); i++) {
-        airport_codes[airports[i].getIata()] = airports[i];
-    }
 }

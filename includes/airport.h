@@ -13,8 +13,6 @@ public:
     string getIcao();
     double getLatitude();
     double getLongitude();
-    // create getters + setters
-    // create method to print an Airport's contents for testing purposes
 
 private:
     int id;
@@ -23,6 +21,4 @@ private:
     string icao;
     double longitude;
     double latitude;
-
-    //branch krish
 };

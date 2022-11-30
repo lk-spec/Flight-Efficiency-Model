@@ -5,20 +5,39 @@
 using namespace std;
 
 int main() {
-    // std::cout << "Informal Testing:" << std::endl;
-
-    // ifstream file;
-    // // may have to change the path bc it could be someone else's
-    // file.open("/workspaces/CS 225/final-project/225-final-project/data/routes.dat");
-    // string data = "";
-    // while (file >> data) {
-    //     std::cout << data << std::endl;
-    // }
-    // file.close();
-
-
+    // creation of the graph
     Graph g("/workspaces/CS 225/final-project/225-final-project/data/airports.dat", "/workspaces/CS 225/final-project/225-final-project/data/routes.dat");
-    // g.printAirports();
+
+    // methods we used for testing our graph
+    
+    // prints the list of valid airports after parsing
+    g.printAirports();
+
+    // prints the graph in an adjacency list format
     g.printGraph();
-    return 0;  
+
+    // prints the list of outgoing flights from a specific airport
+    g.printOutgoingFlights("ORD");
+
+    return 0;
 }
+
+// plans for future
+// refactor the code add helper methods and make it cleaner
+// implement our three algorithms: BFS, Dijkstra's, and Kosaraju's
+// write test cases for the algorithm
+
+// questions:
+// how to make a makefile and test out implementation
+// is the best way that it's implemented and if not what can we do to change it
+// do you think it is feasible with this implementation to correctly design the 3 algorithms
+// how can we make so that we don't have to change the path on another person's device
+// can we cin the file paths? 
+
+// TEST_CASE("TEST_Parse_Big") {
+//     FileData filedata = FileData();
+//     filedata.readAirports("/airport.csv");
+//     filedata.readRoutes("/routes.csv");
+//     
+//     REQUIRE(filedata.airports.size() == 6877);
+// }
