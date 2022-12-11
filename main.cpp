@@ -19,9 +19,10 @@ int main() {
 
     // prints the list of outgoing flights from a specific airport
     // g.printOutgoingFlights("CMI");
-    Kosaraju k;
+    // Kosaraju k;
     // g.printGraph();
-    k.printSCC(g);
+    // k.printSCC(g);
+    cout << g.getDistance("ORD", "ATL") << endl;
 
     return 0;
 }

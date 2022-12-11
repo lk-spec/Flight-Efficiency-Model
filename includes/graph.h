@@ -5,6 +5,7 @@
 #include <vector>
 #include <fstream>
 #include <algorithm>
+#include <cmath>
 #include "airport.h"
 #include "utilities.h"
 
@@ -24,6 +25,9 @@ public:
     vector<pair<string, double>> getAdjAirports(string airport);
     Airport getAirportObj(string airport);
     static Graph transposeGraph(const Graph& g);
+    long double calcDistance(string source, string dest);
+    long double toRadians(const long double degree);
+    double getDistance(string source, string dest);
 
 private:
     map<string, vector<pair<string, double>>> adjlist;

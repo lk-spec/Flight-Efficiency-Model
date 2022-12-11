@@ -79,10 +79,7 @@ Graph::Graph(string airports_file, string routes_file) {
             continue;
         }
 
-        Airport source = airport_codes[contents[2]];
-        Airport dest = airport_codes[contents[4]];
-        // double distance = calcDistance(source, dest);
-        double d = 0;
+        double d = calcDistance(contents[2], contents[4]);
         pair<string, double> edge = make_pair(contents[4], d);
         
         if(find(adjlistNoDist[contents[2]].begin(), adjlistNoDist[contents[2]].end(), contents[4]) == adjlistNoDist[contents[2]].end()) {
@@ -159,4 +156,50 @@ Graph Graph::transposeGraph(const Graph& g) {
         }
     }
     return h;
+}
+
+// code to calculate lat/long distance, adapted from https://www.geeksforgeeks.org/program-distance-two-points-earth/
+long double Graph::calcDistance(string source, string dest) {
+    // Convert the latitudes
+    // and longitudes
+    // from degree to radians.
+    Airport s = airport_codes[source];
+    Airport d = airport_codes[dest];
+    long double lat1 = toRadians(s.getLatitude());
+    long double long1 = toRadians(s.getLongitude());
+    long double lat2 = toRadians(d.getLatitude());
+    long double long2 = toRadians(d.getLongitude());
+     
+    // Haversine Formula
+    long double dlong = long2 - long1;
+    long double dlat = lat2 - lat1;
+ 
+    long double ans = pow(sin(dlat / 2), 2) +
+                          cos(lat1) * cos(lat2) *
+                          pow(sin(dlong / 2), 2);
+ 
+    ans = 2 * asin(sqrt(ans));
+ 
+    // Radius of Earth in
+    // Kilometers, R = 6371
+    // Use R = 3956 for miles
+    long double R = 6371;
+     
+    // Calculate the result
+    ans = ans * R;
+ 
+    return ans;
+}
+
+long double Graph::toRadians(const long double degree) {
+    // cmath library in C++
+    // defines the constant
+    // M_PI as the value of
+    // pi accurate to 1e-30
+    long double one_deg = (M_PI) / 180;
+    return (one_deg * degree);
+}
+
+double Graph::getDistance(string source, string dest) {
+    return calcDistance(source, dest);
 }
