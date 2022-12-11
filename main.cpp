@@ -1,13 +1,14 @@
 #include <iostream> 
 #include <fstream>
 #include "graph.h"
+#include "kosaraju.h"
 
 using namespace std;
 
 int main() {
     // creation of the graph
+    // Graph g("/workspaces/CS 225/final-project/225-final-project/data/airports.dat", "/workspaces/CS 225/final-project/225-final-project/data/routes.dat");
     Graph g("/workspaces/CS 225/final-project/225-final-project/data/airports.dat", "/workspaces/CS 225/final-project/225-final-project/data/routes.dat");
-
     // methods we used for testing our graph
     
     // prints the list of valid airports after parsing
@@ -17,7 +18,10 @@ int main() {
     // g.printGraph();
 
     // prints the list of outgoing flights from a specific airport
-    g.printOutgoingFlights("CMI");
+    // g.printOutgoingFlights("CMI");
+    Kosaraju k;
+    g.printGraph();
+    k.printSCC(g);
 
     return 0;
 }

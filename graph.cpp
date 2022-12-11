@@ -2,6 +2,10 @@
 
 using namespace std;
 
+Graph::Graph() {
+
+}
+
 Graph::Graph(string airports_file, string routes_file) {
     ifstream a_file;
     a_file.open(airports_file);
@@ -122,4 +126,35 @@ void Graph::printAirports() {
 
 unsigned Graph::getAirportsSize() {
     return airports.size();
+}
+
+string Graph::getRandomSource() {
+    return airports[0].getIata();
+}
+
+vector<pair<string, double>> Graph::getAdjAirports(string airport) {
+    return adjlist[airport];
+}
+
+Airport Graph::getAirportObj(string airport) {
+    return airport_codes[airport];
+}
+
+vector<Airport> Graph::getAirports() {
+    return airports;
+}
+
+// static helper functions
+
+Graph Graph::transposeGraph(const Graph& g) {
+    Graph h;
+    h.airports = g.airports;
+    h.airport_codes = g.airport_codes;
+    for (auto & p : g.adjlist) {
+        for (unsigned i = 0; i < p.second.size(); i++) {
+            pair<string, double> edge = make_pair(p.first, p.second[i].second);
+            h.adjlist[p.second[i].first].push_back(edge);
+        }
+    }
+    return h;
 }
