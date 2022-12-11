@@ -20,7 +20,7 @@ int main() {
     // prints the list of outgoing flights from a specific airport
     // g.printOutgoingFlights("CMI");
     Kosaraju k;
-    g.printGraph();
+    // g.printGraph();
     k.printSCC(g);
 
     return 0;

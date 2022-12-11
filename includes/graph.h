@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include <fstream>
-#include <unordered_map>
+#include <algorithm>
 #include "airport.h"
 #include "utilities.h"
 
@@ -27,6 +27,7 @@ public:
 
 private:
     map<string, vector<pair<string, double>>> adjlist;
+    map<string, vector<string>> adjlistNoDist;
     map<string, Airport> airport_codes;
     vector<Airport> airports;
 };

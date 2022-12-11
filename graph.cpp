@@ -69,9 +69,6 @@ Graph::Graph(string airports_file, string routes_file) {
                 str.erase(str.size() - 1, str.size());
             }
             contents[i] = str;
-            // if (i == 2 || i == 4) {
-            //     std::cout << str << " ";
-            // }
         }
         
         if (airport_codes.find(contents[2]) == airport_codes.end()) {
@@ -87,7 +84,12 @@ Graph::Graph(string airports_file, string routes_file) {
         // double distance = calcDistance(source, dest);
         double d = 0;
         pair<string, double> edge = make_pair(contents[4], d);
-        adjlist[contents[2]].push_back(edge);
+        
+        if(find(adjlistNoDist[contents[2]].begin(), adjlistNoDist[contents[2]].end(), contents[4]) == adjlistNoDist[contents[2]].end()) {
+            adjlist[contents[2]].push_back(edge);
+            adjlistNoDist[contents[2]].push_back(contents[4]);
+        }
+        
     }
 
     r_file.close();
