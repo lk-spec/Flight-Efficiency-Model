@@ -110,7 +110,7 @@ void Graph::printOutgoingFlights(string airport) {
     for (unsigned i = 0; i < adjlist[airport].size(); i++) {
         cout << adjlist[airport][i].first << " ";
     }
-    cout << adjlist[airport].size();
+    cout << adjlist[airport].size() << std::endl;
 }
 
 void Graph::printAirports() {

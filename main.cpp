@@ -11,13 +11,13 @@ int main() {
     // methods we used for testing our graph
     
     // prints the list of valid airports after parsing
-    g.printAirports();
+    // g.printAirports();
 
     // prints the graph in an adjacency list format
-    g.printGraph();
+    // g.printGraph();
 
     // prints the list of outgoing flights from a specific airport
-    g.printOutgoingFlights("ORD");
+    g.printOutgoingFlights("CMI");
 
     return 0;
 }
@@ -33,3 +33,4 @@ int main() {
 // do you think it is feasible with this implementation to correctly design the 3 algorithms
 // how can we make so that we don't have to change the path on another person's device
 // can we cin the file paths? 
+// dynamic file path (figure out a way)
