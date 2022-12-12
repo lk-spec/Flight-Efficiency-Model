@@ -7,8 +7,8 @@ using namespace std;
 
 int main() {
     // creation of the graph
-    Graph g("test_data/k_airports.dat", "test_data/k_routes.dat");
-    Graph h("data/airports.dat", "data/routes.dat");
+    Graph g("../tests/k_airports.dat", "../tests/k_routes.dat");
+    // Graph h("data/airports.dat", "data/routes.dat");
     // methods we used for testing our graph
     
     // prints the list of valid airports after parsing
@@ -21,7 +21,7 @@ int main() {
     // g.printOutgoingFlights("CMI");
     Kosaraju k;
     // g.printGraph();
-    k.printSCC(h);
+    k.printSCC(g);
     // cout << g.getDistance("ORD", "ATL") << endl;
 
     return 0;
