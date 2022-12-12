@@ -4,8 +4,8 @@ using namespace std;
 
 void Kosaraju::dfs1(string source, Graph g) {
     visited.insert(source);
-    cout << source << endl;
     vector<pair<string, double>> neighbors = g.getAdjAirports(source); 
+    cout << source << " - " << neighbors.size() << endl;
     for (unsigned i = 0; i < neighbors.size(); i++) {
         if (visited.find(neighbors[i].first) == visited.end()) {
             dfs1(neighbors[i].first, g);
@@ -32,9 +32,9 @@ void Kosaraju::KosarajuSearch(Graph g) {
             dfs1(airports[i].getIata(), g.transposeGraph(g));
         }
     }
-    
-    std::cout << s.size() << std::endl;
-    std::cout << visited.size() << std::endl;
+    // std::cout << "made it past dfs 1" << std::endl;
+    // std::cout << s.size() << std::endl;
+    // std::cout << visited.size() << std::endl;
 
     visited.clear();
     while (!s.empty()) {

@@ -2,9 +2,7 @@
 
 using namespace std;
 
-Graph::Graph() {
-
-}
+Graph::Graph() {}
 
 Graph::Graph(string airports_file, string routes_file) {
     ifstream a_file;
@@ -81,7 +79,7 @@ Graph::Graph(string airports_file, string routes_file) {
 
         double d = calcDistance(contents[2], contents[4]);
         pair<string, double> edge = make_pair(contents[4], d);
-        
+        // adjlist[contents[2]].push_back(edge);
         if(find(adjlistNoDist[contents[2]].begin(), adjlistNoDist[contents[2]].end(), contents[4]) == adjlistNoDist[contents[2]].end()) {
             adjlist[contents[2]].push_back(edge);
             adjlistNoDist[contents[2]].push_back(contents[4]);
@@ -132,7 +130,11 @@ string Graph::getRandomSource() {
 }
 
 vector<pair<string, double>> Graph::getAdjAirports(string airport) {
-    return adjlist[airport];
+    if (adjlist.find(airport) != adjlist.end() && adjlist[airport].size() != 0) {
+        return adjlist[airport];
+    }
+    vector<pair<string, double>> v;
+    return v;
 }
 
 Airport Graph::getAirportObj(string airport) {
