@@ -21,10 +21,15 @@ https://github.com/rohanvan123/225-final-project.git
 Files used: 
 
 Airport: Airport Object that contains information on the id, name, IATA code, ICAO code, latitude, and longitude
+
 Graph: Constructed the graph from the data files
+
 BFS: Did a BFS on the graph to find the closest airports to the source airport
+
 Dijkstra: Used Dijkstra’s Algorithm to find the shortest path between two airports
+
 Kosarajus: Implementation of Kosaraju’s algorithm
+
 Test: Tests our graph and algorithms
  
 How to run the main program:
