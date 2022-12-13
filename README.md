@@ -19,8 +19,15 @@ Dijkstra: Used Dijkstra’s Algorithm to find the shortest path between two airp
 Kosarajus: Implementation of Kosaraju’s algorithm
 Test: Tests our graph and algorithms
  
-How to run the program:
+How to run the main program:
 make main
+
+To execute:
 ./main
+
+
+How to run the test suite:
 Make test
+
+To execute:
 ./test
