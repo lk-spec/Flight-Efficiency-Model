@@ -6,6 +6,7 @@ cmake_policy(SET CMP0009 NEW)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/workspaces/CS 225/final-project/225-final-project/src/*.cpp")
 set(OLD_GLOB
   "/workspaces/CS 225/final-project/225-final-project/src/airport.cpp"
+  "/workspaces/CS 225/final-project/225-final-project/src/bfs.cpp"
   "/workspaces/CS 225/final-project/225-final-project/src/djik.cpp"
   "/workspaces/CS 225/final-project/225-final-project/src/graph.cpp"
   "/workspaces/CS 225/final-project/225-final-project/src/kosaraju.cpp"

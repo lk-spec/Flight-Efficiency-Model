@@ -155,6 +155,30 @@ airport.cpp.s:
 	cd "/workspaces/CS 225/final-project/225-final-project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/airport.cpp.s
 .PHONY : airport.cpp.s
 
+bfs.o: bfs.cpp.o
+.PHONY : bfs.o
+
+# target to build an object file
+bfs.cpp.o:
+	cd "/workspaces/CS 225/final-project/225-final-project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/bfs.cpp.o
+.PHONY : bfs.cpp.o
+
+bfs.i: bfs.cpp.i
+.PHONY : bfs.i
+
+# target to preprocess a source file
+bfs.cpp.i:
+	cd "/workspaces/CS 225/final-project/225-final-project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/bfs.cpp.i
+.PHONY : bfs.cpp.i
+
+bfs.s: bfs.cpp.s
+.PHONY : bfs.s
+
+# target to generate assembly for a file
+bfs.cpp.s:
+	cd "/workspaces/CS 225/final-project/225-final-project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/bfs.cpp.s
+.PHONY : bfs.cpp.s
+
 djik.o: djik.cpp.o
 .PHONY : djik.o
 
@@ -287,6 +311,9 @@ help:
 	@echo "... airport.o"
 	@echo "... airport.i"
 	@echo "... airport.s"
+	@echo "... bfs.o"
+	@echo "... bfs.i"
+	@echo "... bfs.s"
 	@echo "... djik.o"
 	@echo "... djik.i"
 	@echo "... djik.s"

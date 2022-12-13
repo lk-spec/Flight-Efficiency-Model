@@ -283,8 +283,15 @@ CMakeFiles/main.dir/entry/main.cpp.o: ../entry/main.cpp \
   /usr/include/c++/11/bits/stl_multiset.h \
   /usr/include/c++/11/debug/set \
   /usr/include/c++/11/debug/set.h \
-  /usr/include/c++/11/debug/multiset.h
+  /usr/include/c++/11/debug/multiset.h \
+  ../src/bfs.h \
+  /usr/include/c++/11/queue \
+  /usr/include/c++/11/bits/stl_queue.h
 
+
+/usr/include/c++/11/bits/stl_queue.h:
+
+/usr/include/c++/11/queue:
 
 /usr/include/c++/11/debug/multiset.h:
 
@@ -441,6 +448,8 @@ CMakeFiles/main.dir/entry/main.cpp.o: ../entry/main.cpp \
 /usr/include/c++/11/bits/cxxabi_init_exception.h:
 
 /usr/include/c++/11/bits/stringfwd.h:
+
+../src/bfs.h:
 
 /usr/include/c++/11/bits/stl_vector.h:
 

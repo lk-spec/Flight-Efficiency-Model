@@ -19,6 +19,7 @@ public:
     void printAirports();
     void generateCodesMap();
     void printOutgoingFlights(string airport);
+    unsigned getNumOutgoingFlights(string airport);
     unsigned getAirportsSize();
     vector<Airport> getAirports();
     string getRandomSource();

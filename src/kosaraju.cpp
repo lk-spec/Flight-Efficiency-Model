@@ -5,7 +5,6 @@ using namespace std;
 void Kosaraju::dfs1(string source, Graph g) {
     visited.insert(source);
     vector<pair<string, double>> neighbors = g.getAdjAirports(source); 
-    cout << source << " - " << neighbors.size() << endl;
     for (unsigned i = 0; i < neighbors.size(); i++) {
         if (visited.find(neighbors[i].first) == visited.end()) {
             dfs1(neighbors[i].first, g);

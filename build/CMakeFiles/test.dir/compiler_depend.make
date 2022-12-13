@@ -329,8 +329,15 @@ CMakeFiles/test.dir/tests/test.cpp.o: ../tests/test.cpp \
   /usr/include/c++/11/bits/stl_multiset.h \
   /usr/include/c++/11/debug/set \
   /usr/include/c++/11/debug/set.h \
-  /usr/include/c++/11/debug/multiset.h
+  /usr/include/c++/11/debug/multiset.h \
+  ../src/bfs.h \
+  /usr/include/c++/11/queue \
+  /usr/include/c++/11/bits/stl_queue.h
 
+
+/usr/include/c++/11/bits/stl_queue.h:
+
+/usr/include/c++/11/queue:
 
 /usr/include/c++/11/debug/multiset.h:
 
@@ -549,6 +556,8 @@ CMakeFiles/test.dir/tests/test.cpp.o: ../tests/test.cpp \
 /usr/include/c++/11/debug/stl_iterator.h:
 
 /usr/include/c++/11/bits/stringfwd.h:
+
+../src/bfs.h:
 
 /usr/include/c++/11/cstddef:
 

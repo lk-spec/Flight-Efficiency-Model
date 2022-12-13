@@ -205,3 +205,10 @@ long double Graph::toRadians(const long double degree) {
 double Graph::getDistance(string source, string dest) {
     return calcDistance(source, dest);
 }
+
+unsigned Graph::getNumOutgoingFlights(string airport) {
+    if (adjlist.find(airport) != adjlist.end() && adjlist[airport].size() != 0) {
+        return adjlist[airport].size();
+    }
+    return 0;
+}

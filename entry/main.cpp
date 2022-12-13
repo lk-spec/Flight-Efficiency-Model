@@ -2,12 +2,13 @@
 #include <fstream>
 #include "graph.h"
 #include "kosaraju.h"
+#include "bfs.h"
 
 using namespace std;
 
 int main() {
     // creation of the graph
-    Graph g("../tests/k_airports.dat", "../tests/k_routes.dat");
+    Graph g("/workspaces/CS 225/final-project/225-final-project/tests/b_data/b_airports.dat", "/workspaces/CS 225/final-project/225-final-project/tests/b_data/b_routes.dat");
     // Graph h("data/airports.dat", "data/routes.dat");
     // methods we used for testing our graph
     
@@ -15,9 +16,13 @@ int main() {
     // g.printAirports();
 
     // prints the graph in an adjacency list format
-    Graph h = g.transposeGraph(g);
-    h.printOutgoingFlights("CEB");
-
+    // Graph h = g.transposeGraph(g);
+    // h.printOutgoingFlights("CEB");
+    BFS b;
+    vector<string> bfs = b.stepBFS(g, "BOS", 6);
+    for (unsigned i = 0; i < bfs.size(); i++){
+        std::cout << bfs[i] << endl;
+    }
     // prints the list of outgoing flights from a specific airport
     // g.printOutgoingFlights("CMI");
     // Kosaraju k;
