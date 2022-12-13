@@ -4,6 +4,7 @@
 #include <vector>
 #include "graph.h"
 #include "kosaraju.h"
+#include "djik.h"
 #include "bfs.h"
 
 using namespace std;
@@ -63,9 +64,22 @@ TEST_CASE ("BFS Big") {
 
 // Dijkstra's Cases
 
+// shortest routes are based on real life distances between the airports in the graph
+
 TEST_CASE ("Dijkstra Small") {
     Graph g("/workspaces/CS 225/final-project/225-final-project/tests/d_data/d_airports.dat", "/workspaces/CS 225/final-project/225-final-project/tests/d_data/d_routes.dat");
-    g.printGraph();
+    Dijkstras d;
+    vector<string> path = d.DijkstraSearch(g, "LAX", "JFK");
+    vector<string> expected {"LAX", "ORD", "JFK"};
+    REQUIRE (path == expected);
+}
+
+TEST_CASE ("Dijkstra Small 2") {
+    Graph g("/workspaces/CS 225/final-project/225-final-project/tests/d_data/d_airports.dat", "/workspaces/CS 225/final-project/225-final-project/tests/d_data/d_routes.dat");
+    Dijkstras d;
+    vector<string> path = d.DijkstraSearch(g, "ORD", "JFK");
+    vector<string> expected {"ORD", "JFK"};
+    REQUIRE (path == expected);
 }
 
 // kosaraju cases
