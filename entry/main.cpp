@@ -20,7 +20,7 @@ int main() {
     // h.printOutgoingFlights("CEB");
     BFS b;
     vector<string> bfs = b.stepBFS(g, "BOS", 6);
-    for (unsigned i = 0; i < bfs.size(); i++){
+    for (unsigned i = 0; i < bfs.size(); i++) {
         std::cout << bfs[i] << endl;
     }
     // prints the list of outgoing flights from a specific airport

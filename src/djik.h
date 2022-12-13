@@ -1,24 +1,24 @@
-// #pragma once
-// #include "graph.h"
-// #include "plane.h"
-// #include "airport.h"
+#pragma once
+#include "graph.h"
+#include "plane.h"
+#include "airport.h"
 
-// #include <vector>
-// #include <map>
-// #include <queue>
-// #include <string>
-// #include <iostream>
-// #include <algorithm>
+#include <vector>
+#include <map>
+#include <queue>
+#include <string>
+#include <iostream>
+#include <algorithm>
 
 // using namespace std;
 
 // class Djikstras {
-//     public:
-//         Djikstras (Graph g, string StartAirport, string DestAirport);
-//         double getShortestDistance() const;
-//         vector<string> getPathVertices() const;
-//         vector<pair<int, double>> getAdjacent(string Source);
-//         bool vertexExists(string node);
+// public:
+//     Djikstras (Graph g, string StartAirport, string DestAirport);
+//     double getShortestDistance() const;
+//     vector<string> getPathVertices() const;
+//     vector<pair<int, double>> getAdjacent(string Source);
+//     bool vertexExists(string node);
 
 //     private:
 //         map<string, double> dist;
@@ -29,3 +29,11 @@
 //         unordered_map<string, unordered_map<int, Flight> > adjacency_list;
 //         vector<string> path_vertices;
 // };
+
+class Dijkstras {
+    public:
+        vector<string> DijkstraSearch(Graph g, string source, string dest);
+    private:
+
+}
+
