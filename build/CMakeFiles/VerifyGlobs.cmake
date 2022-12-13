@@ -10,7 +10,6 @@ set(OLD_GLOB
   "/workspaces/CS 225/final-project/225-final-project/src/djik.cpp"
   "/workspaces/CS 225/final-project/225-final-project/src/graph.cpp"
   "/workspaces/CS 225/final-project/225-final-project/src/kosaraju.cpp"
-  "/workspaces/CS 225/final-project/225-final-project/src/plane.cpp"
   "/workspaces/CS 225/final-project/225-final-project/src/utilities.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

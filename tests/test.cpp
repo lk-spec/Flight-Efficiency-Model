@@ -10,16 +10,18 @@
 using namespace std;
 
 
-// Graph Cases
+/* Graph Building Cases */
+
+// ensure that only the valid nodes are read (after parsing we discovered that there were 6054 valid airports 
 
 TEST_CASE ("TEST_Parse_Big") {
     Graph g("/workspaces/CS 225/final-project/225-final-project/data/airports.dat", "/workspaces/CS 225/final-project/225-final-project/data/routes.dat");
     REQUIRE(g.getAirportsSize() == 6054);
 }
 
-// test that no other airports are used
+/* BFS Cases */
 
-// BFS Cases
+// BFS test using our own small graph
 
 TEST_CASE ("BFS Basic") {
     Graph g("/workspaces/CS 225/final-project/225-final-project/tests/b_data/b_airports.dat", "/workspaces/CS 225/final-project/225-final-project/tests/b_data/b_routes.dat");
@@ -61,7 +63,7 @@ TEST_CASE ("BFS Big") {
     REQUIRE(bfs.size() == g.getNumOutgoingFlights("ORD"));
 }
 
-// Dijkstra's Cases
+/* Dijkstra's Cases */ 
 
 // shortest routes are based on real life distances between the airports in the graph
 
@@ -89,7 +91,8 @@ TEST_CASE ("Dijkstras Complex") {
     REQUIRE (path == expected);
 }
 
-// test path between two airports with small degrees
+// test path between two airports with small degrees on actual dataset
+
 TEST_CASE ("Dijkstra Actual") {
     Graph g("/workspaces/CS 225/final-project/225-final-project/data/airports.dat", "/workspaces/CS 225/final-project/225-final-project/data/routes.dat");
     Dijkstras d;
@@ -98,6 +101,8 @@ TEST_CASE ("Dijkstra Actual") {
 }
 // kosaraju cases
 
+// test on a small graph, located in the tests directory 
+
 TEST_CASE ("Kosaraju Small") {
     Graph g("/workspaces/CS 225/final-project/225-final-project/tests/k_data/k_airports.dat", "/workspaces/CS 225/final-project/225-final-project/tests/k_data/k_routes.dat");
     Kosaraju k;
@@ -105,6 +110,10 @@ TEST_CASE ("Kosaraju Small") {
     REQUIRE(scc.size() == 2);
     REQUIRE(scc[0].size() + scc[1].size() == 5);
 }
+
+/* test on actual graph was unable to work (we believe this is due to the high volume of recursive calls 
+    or the graph representation of the actual dataset), but we were unable to diagnose this issue
+*/
 
 // TEST_CASE ("Kosaraju Big") {
 //     Graph g("/workspaces/CS 225/final-project/225-final-project/data/airports.dat", "/workspaces/CS 225/final-project/225-final-project/data/routes.dat");

@@ -2,21 +2,16 @@
 
 using namespace std;
 
-// psuedocode:
-//   while the top of priority_queue is not destination:
-//       get the current_node from priority_queue
-//       for neighbor in current_node's neighbors and not in visited:
-//           if update its neighbor's distances:
-//               previous[neighbor] = current_node
-//       save current_node into visited
-//   extract path from previous
-//   return path and distance
+// Dijkstra's Search Algorithm
 
 vector<string> Dijkstras::DijkstraSearch(Graph g, string source, string dest) {
+    // base case
     if (source == dest) {
         return vector<string> {source};
     }
+
     vector<string> path;
+    // code to implement min heap
     priority_queue<pair<double, string>, vector<pair<double, string>>, greater<pair<double, string>>> pq;
     vector<string> vertices;
     vector<Airport> airports = g.getAirports();
@@ -48,6 +43,8 @@ vector<string> Dijkstras::DijkstraSearch(Graph g, string source, string dest) {
             if (visited.find(n.first) == visited.end() && visited.find(curr.second) == visited.end()) {
                 double distance = n.second;
                 if (dist[curr.second] + distance < dist[n.first]) {
+                    // found a neighbor with a shorter distance
+
                     dist[n.first] = dist[curr.second] + distance;
                     prev[n.first] = curr.second;
                     pair<double,string> next_node = make_pair(dist[n.first], n.first);
@@ -73,9 +70,13 @@ vector<string> Dijkstras::DijkstraSearch(Graph g, string source, string dest) {
     return path;
 }
 
+// return the total distance of the path after dijkstra's was called
+
 double Dijkstras::getTotalDistance() {
     return path_dist;
 }
+
+// print the output path from source to dest based on data
 
 void Dijkstras::printDijkstraSearch(Graph g, string source, string dest) {
     vector<string> path = DijkstraSearch(g, source, dest);

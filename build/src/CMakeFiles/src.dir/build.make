@@ -139,24 +139,10 @@ src/CMakeFiles/src.dir/kosaraju.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/kosaraju.cpp.s"
 	cd "/workspaces/CS 225/final-project/225-final-project/build/src" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/workspaces/CS 225/final-project/225-final-project/src/kosaraju.cpp" -o CMakeFiles/src.dir/kosaraju.cpp.s
 
-src/CMakeFiles/src.dir/plane.cpp.o: src/CMakeFiles/src.dir/flags.make
-src/CMakeFiles/src.dir/plane.cpp.o: ../src/plane.cpp
-src/CMakeFiles/src.dir/plane.cpp.o: src/CMakeFiles/src.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/workspaces/CS 225/final-project/225-final-project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/src.dir/plane.cpp.o"
-	cd "/workspaces/CS 225/final-project/225-final-project/build/src" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/src.dir/plane.cpp.o -MF CMakeFiles/src.dir/plane.cpp.o.d -o CMakeFiles/src.dir/plane.cpp.o -c "/workspaces/CS 225/final-project/225-final-project/src/plane.cpp"
-
-src/CMakeFiles/src.dir/plane.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/plane.cpp.i"
-	cd "/workspaces/CS 225/final-project/225-final-project/build/src" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/workspaces/CS 225/final-project/225-final-project/src/plane.cpp" > CMakeFiles/src.dir/plane.cpp.i
-
-src/CMakeFiles/src.dir/plane.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/plane.cpp.s"
-	cd "/workspaces/CS 225/final-project/225-final-project/build/src" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/workspaces/CS 225/final-project/225-final-project/src/plane.cpp" -o CMakeFiles/src.dir/plane.cpp.s
-
 src/CMakeFiles/src.dir/utilities.cpp.o: src/CMakeFiles/src.dir/flags.make
 src/CMakeFiles/src.dir/utilities.cpp.o: ../src/utilities.cpp
 src/CMakeFiles/src.dir/utilities.cpp.o: src/CMakeFiles/src.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/workspaces/CS 225/final-project/225-final-project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/CMakeFiles/src.dir/utilities.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/workspaces/CS 225/final-project/225-final-project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/src.dir/utilities.cpp.o"
 	cd "/workspaces/CS 225/final-project/225-final-project/build/src" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/src.dir/utilities.cpp.o -MF CMakeFiles/src.dir/utilities.cpp.o.d -o CMakeFiles/src.dir/utilities.cpp.o -c "/workspaces/CS 225/final-project/225-final-project/src/utilities.cpp"
 
 src/CMakeFiles/src.dir/utilities.cpp.i: cmake_force
@@ -174,7 +160,6 @@ src_OBJECTS = \
 "CMakeFiles/src.dir/djik.cpp.o" \
 "CMakeFiles/src.dir/graph.cpp.o" \
 "CMakeFiles/src.dir/kosaraju.cpp.o" \
-"CMakeFiles/src.dir/plane.cpp.o" \
 "CMakeFiles/src.dir/utilities.cpp.o"
 
 # External object files for target src
@@ -185,11 +170,10 @@ src/libsrc.a: src/CMakeFiles/src.dir/bfs.cpp.o
 src/libsrc.a: src/CMakeFiles/src.dir/djik.cpp.o
 src/libsrc.a: src/CMakeFiles/src.dir/graph.cpp.o
 src/libsrc.a: src/CMakeFiles/src.dir/kosaraju.cpp.o
-src/libsrc.a: src/CMakeFiles/src.dir/plane.cpp.o
 src/libsrc.a: src/CMakeFiles/src.dir/utilities.cpp.o
 src/libsrc.a: src/CMakeFiles/src.dir/build.make
 src/libsrc.a: src/CMakeFiles/src.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/workspaces/CS 225/final-project/225-final-project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library libsrc.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/workspaces/CS 225/final-project/225-final-project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libsrc.a"
 	cd "/workspaces/CS 225/final-project/225-final-project/build/src" && $(CMAKE_COMMAND) -P CMakeFiles/src.dir/cmake_clean_target.cmake
 	cd "/workspaces/CS 225/final-project/225-final-project/build/src" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/src.dir/link.txt --verbose=$(VERBOSE)
 

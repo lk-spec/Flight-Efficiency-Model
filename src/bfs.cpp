@@ -1,11 +1,16 @@
 #include "bfs.h"
 
+// BFS implmentation that returns all airports that are n steps away from the source vector
+// takes in a graph, source airport, and a number of steps
+// returns a list of all airports that are (steps) flights away from the source
 vector<string> BFS::stepBFS(Graph g, string source, int steps) {
     queue<string> q;
     set<string> visited;
     map<string, int> step_count;
     vector<string> out;
     
+    // base/invalid case 
+
     if (steps <= 0) {
         return out;
     }
@@ -39,6 +44,8 @@ vector<string> BFS::stepBFS(Graph g, string source, int steps) {
     return out;
 
 }
+
+// helper method to print the result
 
 void BFS::printStepBFS(Graph g, string source, int steps) {
     vector<string> bfs = stepBFS(g, source, steps);

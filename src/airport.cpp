@@ -2,9 +2,7 @@
 
 using namespace std;
 
-Airport::Airport() {
-
-}
+Airport::Airport() {}
 
 Airport::Airport(int id, string name, string iata, string icao, double latitude, double longitude) {
     this->id = id;
@@ -14,6 +12,8 @@ Airport::Airport(int id, string name, string iata, string icao, double latitude,
     this->longitude = longitude;
     this->latitude = latitude;
 }
+
+// public getters for accessing attributes
 
 int Airport::getId() {
     return id;

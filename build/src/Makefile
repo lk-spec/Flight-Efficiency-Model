@@ -251,30 +251,6 @@ kosaraju.cpp.s:
 	cd "/workspaces/CS 225/final-project/225-final-project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/kosaraju.cpp.s
 .PHONY : kosaraju.cpp.s
 
-plane.o: plane.cpp.o
-.PHONY : plane.o
-
-# target to build an object file
-plane.cpp.o:
-	cd "/workspaces/CS 225/final-project/225-final-project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/plane.cpp.o
-.PHONY : plane.cpp.o
-
-plane.i: plane.cpp.i
-.PHONY : plane.i
-
-# target to preprocess a source file
-plane.cpp.i:
-	cd "/workspaces/CS 225/final-project/225-final-project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/plane.cpp.i
-.PHONY : plane.cpp.i
-
-plane.s: plane.cpp.s
-.PHONY : plane.s
-
-# target to generate assembly for a file
-plane.cpp.s:
-	cd "/workspaces/CS 225/final-project/225-final-project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/plane.cpp.s
-.PHONY : plane.cpp.s
-
 utilities.o: utilities.cpp.o
 .PHONY : utilities.o
 
@@ -323,9 +299,6 @@ help:
 	@echo "... kosaraju.o"
 	@echo "... kosaraju.i"
 	@echo "... kosaraju.s"
-	@echo "... plane.o"
-	@echo "... plane.i"
-	@echo "... plane.s"
 	@echo "... utilities.o"
 	@echo "... utilities.i"
 	@echo "... utilities.s"

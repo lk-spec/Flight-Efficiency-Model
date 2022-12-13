@@ -18,4 +18,6 @@ add_test( [==[Dijkstra Actual]==] [==[/workspaces/CS 225/final-project/225-final
 set_tests_properties( [==[Dijkstra Actual]==] PROPERTIES WORKING_DIRECTORY [==[/workspaces/CS 225/final-project/225-final-project/build]==])
 add_test( [==[Kosaraju Small]==] [==[/workspaces/CS 225/final-project/225-final-project/build/test]==] [==[Kosaraju Small]==]  )
 set_tests_properties( [==[Kosaraju Small]==] PROPERTIES WORKING_DIRECTORY [==[/workspaces/CS 225/final-project/225-final-project/build]==])
-set( test_TESTS TEST_Parse_Big [==[BFS Basic]==] [==[BFS Edge]==] [==[BFS Regular]==] [==[BFS Big]==] [==[Dijkstra Small]==] [==[Dijkstra Small 2]==] [==[Dijkstras Complex]==] [==[Dijkstra Actual]==] [==[Kosaraju Small]==])
+add_test( [==[Kosaraju Big]==] [==[/workspaces/CS 225/final-project/225-final-project/build/test]==] [==[Kosaraju Big]==]  )
+set_tests_properties( [==[Kosaraju Big]==] PROPERTIES WORKING_DIRECTORY [==[/workspaces/CS 225/final-project/225-final-project/build]==])
+set( test_TESTS TEST_Parse_Big [==[BFS Basic]==] [==[BFS Edge]==] [==[BFS Regular]==] [==[BFS Big]==] [==[Dijkstra Small]==] [==[Dijkstra Small 2]==] [==[Dijkstras Complex]==] [==[Dijkstra Actual]==] [==[Kosaraju Small]==] [==[Kosaraju Big]==])

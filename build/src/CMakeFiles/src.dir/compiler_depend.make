@@ -715,7 +715,6 @@ src/CMakeFiles/src.dir/djik.cpp.o: ../src/djik.cpp \
   ../src/airport.h \
   ../src/utilities.h \
   /usr/include/c++/11/iostream \
-  ../src/plane.h \
   /usr/include/c++/11/queue \
   /usr/include/c++/11/deque \
   /usr/include/c++/11/bits/stl_deque.h \
@@ -1292,28 +1291,6 @@ src/CMakeFiles/src.dir/kosaraju.cpp.o: ../src/kosaraju.cpp \
   /usr/include/c++/11/debug/set.h \
   /usr/include/c++/11/debug/multiset.h
 
-src/CMakeFiles/src.dir/plane.cpp.o: ../src/plane.cpp \
-  ../src/plane.h \
-  /usr/lib/llvm-14/lib/clang/14.0.0/include/limits.h \
-  /usr/include/limits.h \
-  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
-  /usr/include/features.h \
-  /usr/include/features-time64.h \
-  /usr/include/aarch64-linux-gnu/bits/wordsize.h \
-  /usr/include/aarch64-linux-gnu/bits/timesize.h \
-  /usr/include/stdc-predef.h \
-  /usr/include/aarch64-linux-gnu/sys/cdefs.h \
-  /usr/include/aarch64-linux-gnu/bits/long-double.h \
-  /usr/include/aarch64-linux-gnu/gnu/stubs.h \
-  /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
-  /usr/include/aarch64-linux-gnu/bits/posix1_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/local_lim.h \
-  /usr/include/linux/limits.h \
-  /usr/include/aarch64-linux-gnu/bits/pthread_stack_min-dynamic.h \
-  /usr/include/aarch64-linux-gnu/bits/posix2_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/xopen_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/uio_lim.h
-
 src/CMakeFiles/src.dir/utilities.cpp.o: ../src/utilities.cpp \
   ../src/utilities.h \
   /usr/include/c++/11/iostream \
@@ -1538,8 +1515,6 @@ src/CMakeFiles/src.dir/utilities.cpp.o: ../src/utilities.cpp \
 /usr/include/aarch64-linux-gnu/bits/local_lim.h:
 
 /usr/lib/llvm-14/lib/clang/14.0.0/include/limits.h:
-
-../src/plane.h:
 
 ../src/djik.h:
 
@@ -2020,8 +1995,6 @@ src/CMakeFiles/src.dir/utilities.cpp.o: ../src/utilities.cpp \
 /usr/include/c++/11/utility:
 
 /usr/include/c++/11/ios:
-
-../src/plane.cpp:
 
 /usr/include/c++/11/bits/ios_base.h:
 

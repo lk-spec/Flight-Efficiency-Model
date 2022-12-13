@@ -331,7 +331,6 @@ CMakeFiles/test.dir/tests/test.cpp.o: ../tests/test.cpp \
   /usr/include/c++/11/debug/set.h \
   /usr/include/c++/11/debug/multiset.h \
   ../src/djik.h \
-  ../src/plane.h \
   /usr/include/c++/11/queue \
   /usr/include/c++/11/bits/stl_queue.h \
   /usr/lib/llvm-14/lib/clang/14.0.0/include/limits.h \
@@ -354,8 +353,6 @@ CMakeFiles/test.dir/tests/test.cpp.o: ../tests/test.cpp \
 /usr/include/c++/11/bits/stl_queue.h:
 
 /usr/include/c++/11/queue:
-
-../src/plane.h:
 
 ../src/djik.h:
 

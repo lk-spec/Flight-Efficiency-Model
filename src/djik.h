@@ -1,6 +1,5 @@
 #pragma once
 #include "graph.h"
-#include "plane.h"
 #include "airport.h"
 
 #include <vector>

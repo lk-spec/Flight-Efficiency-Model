@@ -2,6 +2,8 @@
 
 using namespace std;
 
+// dfs on the transposed graph to get the right order of nodes in the stack
+
 void Kosaraju::dfs1(string source, Graph g) {
     visited.insert(source);
     vector<pair<string, double>> neighbors = g.getAdjAirports(source); 
@@ -10,8 +12,11 @@ void Kosaraju::dfs1(string source, Graph g) {
             dfs1(neighbors[i].first, g);
         }
     }
+
     s.push(source);
 }
+
+// second dfs to get sccs
 
 void Kosaraju::dfs2(string source, Graph g) {
     visited.insert(source);
@@ -24,6 +29,8 @@ void Kosaraju::dfs2(string source, Graph g) {
     }
 }
 
+// main Kosaraju algorithm
+
 void Kosaraju::KosarajuSearch(Graph g) {
     vector<Airport> airports = g.getAirports();
     for (unsigned i = 0; i < airports.size(); i++) {
@@ -31,9 +38,6 @@ void Kosaraju::KosarajuSearch(Graph g) {
             dfs1(airports[i].getIata(), g.transposeGraph(g));
         }
     }
-    // std::cout << "made it past dfs 1" << std::endl;
-    // std::cout << s.size() << std::endl;
-    // std::cout << visited.size() << std::endl;
 
     visited.clear();
     while (!s.empty()) {
@@ -47,6 +51,8 @@ void Kosaraju::KosarajuSearch(Graph g) {
     }
 }
 
+// print the strongly connected components in a more fashionable way
+
 void Kosaraju::printSCC(Graph g) {
     KosarajuSearch(g);
     for (unsigned i = 0; i < scc.size(); i++) {
@@ -57,6 +63,8 @@ void Kosaraju::printSCC(Graph g) {
         cout << "\n";
     }
 }
+
+// returns the actuall list of scc (useful for testing)
 
 vector<vector<string>> Kosaraju::getSCC(Graph g) {
     KosarajuSearch(g);

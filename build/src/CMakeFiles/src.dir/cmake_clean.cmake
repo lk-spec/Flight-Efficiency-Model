@@ -9,8 +9,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/src.dir/graph.cpp.o.d"
   "CMakeFiles/src.dir/kosaraju.cpp.o"
   "CMakeFiles/src.dir/kosaraju.cpp.o.d"
-  "CMakeFiles/src.dir/plane.cpp.o"
-  "CMakeFiles/src.dir/plane.cpp.o.d"
   "CMakeFiles/src.dir/utilities.cpp.o"
   "CMakeFiles/src.dir/utilities.cpp.o.d"
   "libsrc.a"
