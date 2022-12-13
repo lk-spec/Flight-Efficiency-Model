@@ -13,7 +13,7 @@ int main() {
     
     // exampel of BFS
     BFS b;
-    b.printStepBFS(g, "ORD", 1)
+    b.printStepBFS(g, "ORD", 1);
 
     // example of Dijkstra's
     Dijkstras d;
@@ -22,7 +22,7 @@ int main() {
     // example of Kosaraju's
     Graph h("/workspaces/CS 225/final-project/225-final-project/tests/k_data/k_airports.dat", "/workspaces/CS 225/final-project/225-final-project/tests/k_data/k_routes.dat");
     Kosaraju k;
-    k.printSCC(g);
-    
+    k.printSCC(h);
+
     return 0;
 }
