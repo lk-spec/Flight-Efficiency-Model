@@ -8,30 +8,21 @@
 using namespace std;
 
 int main() {
-    // creation of the graph
+    // creation of the graph (may have to change routes depending on paths)
     Graph g("/workspaces/CS 225/final-project/225-final-project/data/airports.dat", "/workspaces/CS 225/final-project/225-final-project/data/routes.dat");
-    // Graph h("data/airports.dat", "data/routes.dat");
-    // methods we used for testing our graph
     
-    // prints the list of valid airports after parsing
-    // g.printAirports();
+    // exampel of BFS
+    BFS b;
+    b.printStepBFS(g, "ORD", 1)
 
-    // prints the graph in an adjacency list format
-    // Graph h = g.transposeGraph(g);
-    // h.printOutgoingFlights("CEB");
-    // BFS b;
-    // vector<string> bfs = b.stepBFS(g, "BOS", 6);
-    // for (unsigned i = 0; i < bfs.size(); i++) {
-    //     std::cout << bfs[i] << endl;
-    // }
-    // prints the list of outgoing flights from a specific airport
-    // g.printOutgoingFlights("CMI");
-    // Kosaraju k;
-    // g.printGraph();
-    // k.printSCC(g);
-    // cout << g.getDistance("ORD", "ATL") << endl;
+    // example of Dijkstra's
     Dijkstras d;
     d.printDijkstraSearch(g, "KHH", "OGG");
 
+    // example of Kosaraju's
+    Graph h("/workspaces/CS 225/final-project/225-final-project/tests/k_data/k_airports.dat", "/workspaces/CS 225/final-project/225-final-project/tests/k_data/k_routes.dat");
+    Kosaraju k;
+    k.printSCC(g);
+    
     return 0;
 }

@@ -12,20 +12,18 @@ Graph::Graph(string airports_file, string routes_file) {
     while (std::getline(a_file, line)) {
         vector<string> contents = split_line(line);
 
-        // create helper method to clean contents
         for (unsigned i = 0; i < contents.size(); i++) {
             string str = contents[i];
             // code to remove quotes within string
+
             if (str.size() >= 2 && str[0] == '\"') {
                 str.erase(0, 1);
                 str.erase(str.size() - 1, str.size());
             }
             contents[i] = str;
-            // std::cout << str << " ";
         }
-        // std::cout << "\n";
 
-        // also create helper method to validate content
+
         // check if content is valid; 
         if (contents[0] == "N" || contents[1] == "N" || contents[4] == "N" || contents[5] == "N" || contents[6] == "N" || contents[7] == "N" || 
             contents[0] == "\\N" || contents[1] == "\\N" || contents[4] == "\\N" || contents[5] == "\\N" || contents[6] == "\\N" || contents[7] == "\\N") {
@@ -35,6 +33,8 @@ Graph::Graph(string airports_file, string routes_file) {
         int id = 0;
         double latitude = 0;
         double longitude = 0;
+
+        // if invalid values to represent do not add the value 
         try {
             latitude = stod(contents[6]);
             longitude = stod(contents[7]);
@@ -52,13 +52,15 @@ Graph::Graph(string airports_file, string routes_file) {
     a_file.close();
     generateCodesMap();
 
+    // add the edges into the graph
+
     ifstream r_file;
     r_file.open(routes_file);
     line = "";
     while (std::getline(r_file, line)) {
         vector<string> contents = split_line(line);
 
-        // create helper method to clean contents
+        // clean contents
         for (unsigned i = 0; i < contents.size(); i++) {
             string str = contents[i];
             // code to remove quotes within string
@@ -69,6 +71,7 @@ Graph::Graph(string airports_file, string routes_file) {
             contents[i] = str;
         }
         
+        // ensure that both source and dest are in the vector of vertices
         if (airport_codes.find(contents[2]) == airport_codes.end()) {
             continue;
         }
@@ -79,7 +82,8 @@ Graph::Graph(string airports_file, string routes_file) {
 
         double d = calcDistance(contents[2], contents[4]);
         pair<string, double> edge = make_pair(contents[4], d);
-        // adjlist[contents[2]].push_back(edge);
+    
+        // ensure that we are not adding a double edge (same flight from different airlines)
         if(find(adjlistNoDist[contents[2]].begin(), adjlistNoDist[contents[2]].end(), contents[4]) == adjlistNoDist[contents[2]].end()) {
             adjlist[contents[2]].push_back(edge);
             adjlistNoDist[contents[2]].push_back(contents[4]);
@@ -172,7 +176,6 @@ long double Graph::calcDistance(string source, string dest) {
     long double lat2 = toRadians(d.getLatitude());
     long double long2 = toRadians(d.getLongitude());
      
-    // Haversine Formula
     long double dlong = long2 - long1;
     long double dlat = lat2 - lat1;
  
@@ -182,22 +185,14 @@ long double Graph::calcDistance(string source, string dest) {
  
     ans = 2 * asin(sqrt(ans));
  
-    // Radius of Earth in
-    // Kilometers, R = 6371
-    // Use R = 3956 for miles
     long double R = 6371;
      
-    // Calculate the result
     ans = ans * R;
  
     return ans;
 }
 
 long double Graph::toRadians(const long double degree) {
-    // cmath library in C++
-    // defines the constant
-    // M_PI as the value of
-    // pi accurate to 1e-30
     long double one_deg = (M_PI) / 180;
     return (one_deg * degree);
 }

@@ -2,6 +2,8 @@
 
 using namespace std;
 
+// helper method to split a line in csv file to a vector of strings
+
 vector<string> split_line(string line) {
     vector<string> contents;
     string s = line;

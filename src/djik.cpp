@@ -2,16 +2,20 @@
 
 using namespace std;
 
-// Dijkstra's Search Algorithm
+// Implementation of Dijkstra's Search Algorithm given a Graph g, a source airport, and destination airport
+// returns the shortest flight route path between source and dest based on longitude/latitude distance
 
 vector<string> Dijkstras::DijkstraSearch(Graph g, string source, string dest) {
+    // reset path_dist to 0 each time
+    path_dist = 0;
+
     // base case
     if (source == dest) {
         return vector<string> {source};
     }
 
     vector<string> path;
-    // code to implement min heap
+    // min heap representation using pq
     priority_queue<pair<double, string>, vector<pair<double, string>>, greater<pair<double, string>>> pq;
     vector<string> vertices;
     vector<Airport> airports = g.getAirports();
@@ -19,9 +23,11 @@ vector<string> Dijkstras::DijkstraSearch(Graph g, string source, string dest) {
     map<string, double> dist;
     set<string> visited;
 
+    // source node has a distance of zero
     dist[source] = 0.0;
     prev[source] = "";
 
+    // set distance to every other node as INT_MAX (inf)
     for (unsigned i = 0; i < airports.size(); i++) {
         vertices.push_back(airports[i].getIata());
         if(airports[i].getIata() != source) {
@@ -29,6 +35,8 @@ vector<string> Dijkstras::DijkstraSearch(Graph g, string source, string dest) {
             prev[airports[i].getIata()] = "";
         }
     }
+
+    // add source to pq
 
     pair<double,string> start = make_pair(0.0, source);
     pq.push(start);
@@ -44,7 +52,6 @@ vector<string> Dijkstras::DijkstraSearch(Graph g, string source, string dest) {
                 double distance = n.second;
                 if (dist[curr.second] + distance < dist[n.first]) {
                     // found a neighbor with a shorter distance
-
                     dist[n.first] = dist[curr.second] + distance;
                     prev[n.first] = curr.second;
                     pair<double,string> next_node = make_pair(dist[n.first], n.first);
@@ -56,7 +63,7 @@ vector<string> Dijkstras::DijkstraSearch(Graph g, string source, string dest) {
         visited.insert(curr.second);
     }
 
-    // reverse this path
+    // now we have the right path, we simply have to reverse it to represent it from start to end
 
     string key = dest;
     path.push_back(dest);
@@ -70,13 +77,13 @@ vector<string> Dijkstras::DijkstraSearch(Graph g, string source, string dest) {
     return path;
 }
 
-// return the total distance of the path after dijkstra's was called
+// Method return the total distance of the path after dijkstra's was called
 
 double Dijkstras::getTotalDistance() {
     return path_dist;
 }
 
-// print the output path from source to dest based on data
+// Helpter method to print the output path from source to dest
 
 void Dijkstras::printDijkstraSearch(Graph g, string source, string dest) {
     vector<string> path = DijkstraSearch(g, source, dest);
