@@ -20,12 +20,14 @@ Kosarajus: Implementation of Kosaraju’s algorithm
 Test: Tests our graph and algorithms
  
 How to run the main program:
+cd into the ./build dir
+
 make main
 
 To execute:
 ./main
 
-
+cd into the ./build dir
 How to run the test suite:
 Make test
 
