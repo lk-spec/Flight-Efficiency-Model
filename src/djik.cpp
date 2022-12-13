@@ -2,12 +2,17 @@
 
 using namespace std;
 
+// psuedocode:
+//   while the top of priority_queue is not destination:
+//       get the current_node from priority_queue
+//       for neighbor in current_node's neighbors and not in visited:
+//           if update its neighbor's distances:
+//               previous[neighbor] = current_node
+//       save current_node into visited
+//   extract path from previous
+//   return path and distance
+
 vector<string> Dijkstras::DijkstraSearch(Graph g, string source, string dest) {
-    //       initialize distances  // initialize tentative distance value
-    //   initialize previous   // initialize a map that maps current node -> its previous node
-    //   initialize priority_queue   // initialize the priority queue
-    //   initialize visited
-    // initialize the priority queue
     if (source == dest) {
         return vector<string> {source};
     }
@@ -34,15 +39,6 @@ vector<string> Dijkstras::DijkstraSearch(Graph g, string source, string dest) {
     pq.push(start);
 
     while(pq.top().second != dest) {
-        //   while the top of priority_queue is not destination:
-        //       get the current_node from priority_queue
-        //       for neighbor in current_node's neighbors and not in visited:
-        //           if update its neighbor's distances:
-        //               previous[neighbor] = current_node
-        //       save current_node into visited
-
-        //   extract path from previous
-        //   return path and distance
         pair<double, string> curr = pq.top();
         pq.pop();
         vector<pair<string, double>> neighbors = g.getAdjAirports(curr.second);

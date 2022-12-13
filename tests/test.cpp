@@ -19,7 +19,6 @@ TEST_CASE ("TEST_Parse_Big") {
 
 // test that no other airports are used
 
-
 // BFS Cases
 
 TEST_CASE ("BFS Basic") {
@@ -82,6 +81,21 @@ TEST_CASE ("Dijkstra Small 2") {
     REQUIRE (path == expected);
 }
 
+TEST_CASE ("Dijkstras Complex") {
+    Graph g("/workspaces/CS 225/final-project/225-final-project/tests/b_data/b_airports.dat", "/workspaces/CS 225/final-project/225-final-project/tests/b_data/b_routes_alt");
+    Dijkstras d;
+    vector<string> path = d.DijkstraSearch(g, "LHR", "SFO");
+    vector<string> expected {"LHR", "DEN", "SFO"};
+    REQUIRE (path == expected);
+}
+
+// test path between two airports with small degrees
+TEST_CASE ("Dijkstra Actual") {
+    Graph g("/workspaces/CS 225/final-project/225-final-project/data/airports.dat", "/workspaces/CS 225/final-project/225-final-project/data/routes.dat");
+    Dijkstras d;
+    d.printDijkstraSearch(g, "KHH", "OGG");
+    
+}
 // kosaraju cases
 
 TEST_CASE ("Kosaraju Small") {
