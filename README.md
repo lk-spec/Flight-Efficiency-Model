@@ -1,4 +1,4 @@
-# 225-final-project
+# OpenFlights Graph Algorithms
 
 README
 
